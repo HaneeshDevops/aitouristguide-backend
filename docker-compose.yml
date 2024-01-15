@@ -6,6 +6,11 @@ services:
     container_name: mysqlserver
     environment:
       - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=tourplanservicedb
+      - MYSQL_DATABASE=placeservicedb
+      - MYSQL_DATABASE=userservicedb
+      - MYSQL_DATABASE=feedbackservicedb
+      - MYSQL_DATABASE=adminservicedb
     volumes:
       - mysqlserver-db:/var/lib/mysql
     networks:
@@ -54,8 +59,8 @@ services:
     image: snahammed/feedbackimage
     container_name: feedbackservice
     environment:
-    # - SPRING_DATASOURCE_URL=jdbc:mysql://mysqlserver:3306/feedbackservicedb?useSSL=false
-      - SPRING_DATASOURCE_URL=jdbc:mysql://mysqlserver:3306/feedbackservicedb?useSSL=false&allowPublicKeyRetrieval=true
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysqlserver:3306/feedbackservicedb?useSSL=false
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysqlserver:3306/your_database?useSSL=false&allowPublicKeyRetrieval=true
       - SPRING_DATASOURCE_USERNAME=root
       - SPRING_DATASOURCE_PASSWORD=root
       - SERVER_PORT=8060
