@@ -15,42 +15,42 @@ pipeline {
                     // Feedback Service
                     sh 'cd feedback-service'
                     sh 'mvn clean install -DskipTests'
-                    docker build --no-cache -t feedbackimage:latest .
+                    docker build -t feedbackimage:latest .
                     sh 'docker push haneeshdevops/feedbackimage:latest'
                     sh 'cd ..'
 
                     // Admin Service
                     sh 'cd admin-service'
                     sh 'mvn clean install -DskipTests'
-                    docker build --no-cache -t adminimage:latest .
+                    docker build -t adminimage:latest .
                     sh 'docker push haneeshdevops/adminimage:latest'
                     sh 'cd ..'
 
                     // Place Service
                     sh 'cd place-service'
                     sh 'mvn clean install -DskipTests'
-                    docker build --no-cache -t placeimage:latest .
+                    docker build -t placeimage:latest .
                     sh 'docker push haneeshdevops/placeimage:latest'
                     sh 'cd ..'
 
                     // Server Registry
                     sh 'cd server-registry'
                     sh 'mvn clean install -DskipTests'
-                    docker build --no-cache -t serverimage:latest .
+                    docker build -t serverimage:latest .
                     sh 'docker push haneeshdevops/serverimage:latest'
                     sh 'cd ..'
 
                     // Tourplan Service
                     sh 'cd tourplan-service'
                     sh 'mvn clean install -DskipTests'
-                    docker build --no-cache -t tourplanimage:latest .
+                    docker build  -t tourplanimage:latest .
                     sh 'docker push haneeshdevops/tourplanimage:latest'
                     sh 'cd ..'
 
                     // User Service
                     sh 'cd UserService'
                     sh 'mvn clean install -DskipTests'
-                    docker build --no-cache -t userimage:latest .
+                    docker build  -t userimage:latest .
                     sh 'docker push haneeshdevops/userimage:latest'
                     sh 'cd ..'
 
