@@ -15,42 +15,42 @@ pipeline {
                     // Feedback Service
                     sh 'cd feedback-service'
                     sh 'mvn clean install -DskipTests'
-                    docker build -t feedbackimage:latest .
+                    sh 'docker build -t feedbackimage:latest .'
                     sh 'docker push haneeshdevops/feedbackimage:latest'
                     sh 'cd ..'
 
                     // Admin Service
                     sh 'cd admin-service'
                     sh 'mvn clean install -DskipTests'
-                    docker build -t adminimage:latest .
+                    sh 'docker build -t adminimage:latest .'
                     sh 'docker push haneeshdevops/adminimage:latest'
                     sh 'cd ..'
 
                     // Place Service
                     sh 'cd place-service'
                     sh 'mvn clean install -DskipTests'
-                    docker build -t placeimage:latest .
+                    sh 'docker build -t placeimage:latest .'
                     sh 'docker push haneeshdevops/placeimage:latest'
                     sh 'cd ..'
 
                     // Server Registry
                     sh 'cd server-registry'
                     sh 'mvn clean install -DskipTests'
-                    docker build -t serverimage:latest .
+                    sh 'docker build -t serverimage:latest .'
                     sh 'docker push haneeshdevops/serverimage:latest'
                     sh 'cd ..'
 
                     // Tourplan Service
                     sh 'cd tourplan-service'
                     sh 'mvn clean install -DskipTests'
-                    docker build  -t tourplanimage:latest .
+                    sh 'docker build  -t tourplanimage:latest .'
                     sh 'docker push haneeshdevops/tourplanimage:latest'
                     sh 'cd ..'
 
                     // User Service
                     sh 'cd UserService'
                     sh 'mvn clean install -DskipTests'
-                    docker build  -t userimage:latest .
+                    sh 'docker build  -t userimage:latest .'
                     sh 'docker push haneeshdevops/userimage:latest'
                     sh 'cd ..'
 
