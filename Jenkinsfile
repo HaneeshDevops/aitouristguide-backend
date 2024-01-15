@@ -56,7 +56,7 @@ pipeline {
                     sh 'cd ..'
 
                   // Launch all apps
-                    sh 'docer-compose up -d'
+                    sh 'docker-compose up -d'
                 }
             }
         }
