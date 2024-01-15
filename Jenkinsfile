@@ -9,8 +9,8 @@ pipeline {
 
                 // Build your Spring Boot application
 
-                withCredentials([usernamePassword(credentialsId: 'DockerRegistry', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
-                    sh "docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}"
+                // withCredentials([usernamePassword(credentialsId: 'DockerRegistry', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
+                //     sh "docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}"
 
                     // Feedback Service
                     sh 'cd feedback-service'
@@ -56,7 +56,7 @@ pipeline {
 
                   // Launch all apps
                     sh 'docer-compose up -d'
-                }
+                // }
             }
         }
     }
